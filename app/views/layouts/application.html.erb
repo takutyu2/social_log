@@ -1,14 +1,22 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>SocialLog</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+	<head>
+		<title>SocialLog</title>
+		<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+		<%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+		<%= csrf_meta_tags %>
+	</head>
+	<body>
+		<div id="container">
+			<div id="user_nav">
+				<% if signed_in? %>
+				ようこそ！ <%= session[:username] %>
+				<% else %>
+				<%= link_to "twitterにサインイン", "/auth/twitter" %>
+				<%= link_to "facebookにサインイン", "/auth/facebook" %>
+				<% end %>
+			</div>
+			<%= yield %>
+		</div>
+	</body>
 </html>

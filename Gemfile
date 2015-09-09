@@ -2,7 +2,8 @@ source 'https://rubygems.org'
 
 
 gem 'rails'
-gem 'mysql2'
+# gem 'mysql2'
+gem 'sqlite3'
 gem 'haml-rails'               # HTMLを簡潔に書ける
 gem 'sass-rails'               # CSSを効率的に書ける
 gem 'bootstrap-sass'           # Twitter Bootstrapが使える
@@ -10,6 +11,8 @@ gem 'compass-rails'            # Sassの機能拡張
 gem 'uglifier'                 # JavaScriptの圧縮
 gem 'coffee-rails'             # JavaScriptを簡潔に書ける
 gem 'jquery-rails'             # jQueryが使える
+gem 'turbolinks'               # turbolinksの設定に使うっぽい
+gem 'activeresource'
 
 # # Authentication
 # gem 'omniauth'                 # 外部アカウントでログインできる
@@ -32,6 +35,14 @@ gem 'rails_config'             # 定数管理
 # gem 'whenever', :require => false   # cronを登録できる
 # gem 'exception_notification'   # エラーが発生したらメールを送ってくれる
 # gem 'newrelic_rpm'             # パフォーマンス監視サービスを利用できる
+
+## twitter api 関連 ##
+gem 'twitter'
+gem 'oauth'
+gem 'omniauth-twitter'
+
+## facebook api 関連 ##
+gem 'omniauth-facebook'
 
 group :development do
   # gem 'thin'                   # 開発用サーバ 

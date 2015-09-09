@@ -1,4 +1,23 @@
 Rails.application.routes.draw do
+  root 'home#index'
+  
+  get "home/index"
+  
+  # twitter routes
+  get "/tweet" => "tweet#timeline"
+  get "/auth/:provider/callback" => "sessions#create_twitter"
+  get "/signout_twitter" => "sessions#destroy_twitter"
+  
+  # facebook routes
+  get "/facebook" => "facebook#timeline"
+  get "/auth/:provider/callback" => "sessions#create_facebook"
+  get "/signout_facebook" => "sessions#destroy_facebook"
+  
+  # instagram routes
+  get "/instagram" => "instagram#timeline"
+  get "/auth/:provider/callback" => "sessions#create_twitter"
+  get "/signout_instagram" => "sessions#destroy_instagram"
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
