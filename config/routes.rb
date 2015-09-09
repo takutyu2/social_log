@@ -5,18 +5,18 @@ Rails.application.routes.draw do
   
   # twitter routes
   get "/tweet" => "tweet#timeline"
-  get "/auth/:provider/callback" => "sessions#create_twitter"
-  get "/signout_twitter" => "sessions#destroy_twitter"
+  get "/signout_twitter" => "sessions#destroy"
   
   # facebook routes
   get "/facebook" => "facebook#timeline"
-  get "/auth/:provider/callback" => "sessions#create_facebook"
-  get "/signout_facebook" => "sessions#destroy_facebook"
+  get "/signout_facebook" => "sessions#destroy"
   
   # instagram routes
   get "/instagram" => "instagram#timeline"
-  get "/auth/:provider/callback" => "sessions#create_twitter"
-  get "/signout_instagram" => "sessions#destroy_instagram"
+  get "/signout_instagram" => "sessions#destroy"
+  
+  # Oauth routes
+  get "/auth/:provider/callback" => "sessions#create"
  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
